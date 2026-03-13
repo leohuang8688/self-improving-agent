@@ -1,8 +1,8 @@
-# 🧤 Self-Improving Claw
+# 🧤 Self-Improver
 
-**Self-Improving Agent System for OpenClaw**
+**OpenClaw Skill - Self-Improving Agent System**
 
-A continuous learning agent system that learns from interactions and continuously improves its performance.
+A continuous learning agent skill for OpenClaw that learns from interactions and continuously improves its performance.
 
 **[🇺🇸 English](README.md)** | **[🇨🇳 中文文档](README-CN.md)**
 
@@ -15,7 +15,8 @@ A continuous learning agent system that learns from interactions and continuousl
 - 📚 **Memory System** - Stores and retrieves learnings
 - 🔌 **Hook System** - Extensible hook system for custom improvements
 - 📊 **Progress Tracking** - Track improvement over time
-- 🐍 **Python CLI** - Easy to use command-line interface
+- 🔧 **Python CLI** - Easy to use command-line interface
+- 🧩 **OpenClaw Skill** - Seamless integration with OpenClaw
 
 ---
 
@@ -29,6 +30,16 @@ A continuous learning agent system that learns from interactions and continuousl
 
 ### Installation
 
+#### As OpenClaw Skill
+
+```bash
+# Clone to OpenClaw skills directory
+cd ~/.openclaw/workspace/skills
+git clone https://github.com/leohuang8688/self-improve-claw.git
+```
+
+#### As Python Package
+
 ```bash
 # Clone the repository
 git clone https://github.com/leohuang8688/self-improve-claw.git
@@ -41,20 +52,34 @@ pip install -e .
 uv pip install -e .
 ```
 
+### Enable in OpenClaw
+
+Add to your OpenClaw configuration:
+
+```json
+{
+  "skills": {
+    "self-improve-claw": {
+      "enabled": true
+    }
+  }
+}
+```
+
 ### Basic Usage
 
 ```bash
 # Run the self-improving agent
-self-improve-claw run
+python -m self_improver run
 
 # Learn from last session
-self-improve-claw learn
+python -m self_improver learn
 
 # Review all learnings
-self-improve-claw review
+python -m self_improver review
 
 # Export learnings to file
-self-improve-claw export
+python -m self_improver export
 ```
 
 ---
@@ -66,7 +91,7 @@ self-improve-claw export
 Executes the self-improving agent with all applied improvements.
 
 ```bash
-self-improve-claw run --workspace /path/to/workspace
+python -m self_improver run --workspace /path/to/workspace
 ```
 
 ### `learn` - Learn from Session
@@ -74,7 +99,7 @@ self-improve-claw run --workspace /path/to/workspace
 Analyzes the last session and extracts learnings.
 
 ```bash
-self-improve-claw learn --verbose
+python -m self_improver learn --verbose
 ```
 
 ### `review` - Review Learnings
@@ -82,7 +107,7 @@ self-improve-claw learn --verbose
 Reviews all stored learnings.
 
 ```bash
-self-improve-claw review --verbose
+python -m self_improver review --verbose
 ```
 
 ### `export` - Export Learnings
@@ -90,7 +115,7 @@ self-improve-claw review --verbose
 Exports all learnings to a markdown file.
 
 ```bash
-self-improve-claw export
+python -m self_improver export
 ```
 
 ---

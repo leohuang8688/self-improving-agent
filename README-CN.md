@@ -1,8 +1,8 @@
-# 🧤 Self-Improving Claw
+# 🧤 Self-Improver
 
-**OpenClaw 自改进智能体系统**
+**OpenClaw 技能 - 自改进智能体系统**
 
-一个持续学习的智能体系统，从交互中学习并持续改进性能。
+一个为 OpenClaw 设计的持续学习智能体技能，从交互中学习并持续改进性能。
 
 **[🇺🇸 English](README.md)** | **[🇨🇳 中文文档](README-CN.md)**
 
@@ -45,16 +45,16 @@ uv pip install -e .
 
 ```bash
 # 运行自改进智能体
-self-improve-claw run
+python -m self_improver run
 
 # 从上次会话学习
-self-improve-claw learn
+python -m self_improver learn
 
 # 查看所有学习成果
-self-improve-claw review
+python -m self_improver review
 
 # 导出学习成果到文件
-self-improve-claw export
+python -m self_improver export
 ```
 
 ---
@@ -66,7 +66,7 @@ self-improve-claw export
 执行带有所有已应用改进的自改进智能体。
 
 ```bash
-self-improve-claw run --workspace /path/to/workspace
+python -m self_improver run --workspace /path/to/workspace
 ```
 
 ### `learn` - 从会话学习
@@ -74,7 +74,7 @@ self-improve-claw run --workspace /path/to/workspace
 分析上次会话并提取学习成果。
 
 ```bash
-self-improve-claw learn --verbose
+python -m self_improver learn --verbose
 ```
 
 ### `review` - 回顾学习成果
@@ -82,7 +82,7 @@ self-improve-claw learn --verbose
 回顾所有存储的学习成果。
 
 ```bash
-self-improve-claw review --verbose
+python -m self_improver review --verbose
 ```
 
 ### `export` - 导出学习成果
@@ -90,7 +90,7 @@ self-improve-claw review --verbose
 将所有学习成果导出到 markdown 文件。
 
 ```bash
-self-improve-claw export
+python -m self_improver export
 ```
 
 ---
