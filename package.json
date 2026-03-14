@@ -1,5 +1,5 @@
 {
-  "name": "self-improver",
+  "name": "self-improving-agent",
   "version": "1.0.0",
   "description": "Self-improving agent system for OpenClaw",
   "main": "src/__init__.py",
@@ -19,6 +19,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leohuang8688/self-improver.git"
+    "url": "https://github.com/leohuang8688/self-improving-agent.git"
   }
 }

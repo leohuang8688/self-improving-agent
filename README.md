@@ -1,4 +1,4 @@
-# 🧤 Self-Improver
+# 🧤 Self-Improving Agent
 
 **OpenClaw Skill - Self-Improving Agent System**
 

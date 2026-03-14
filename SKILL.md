@@ -1,9 +1,9 @@
 ---
-name: self-improver
+name: self-improving-agent
 description: Self-improving agent system for OpenClaw. Enables continuous learning from interactions and automatic performance improvements. Features memory system, hook system, and progress tracking.
 ---
 
-# Self-Improver
+# Self-Improving Agent
 
 ## 🔒 Security
 
