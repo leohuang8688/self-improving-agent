@@ -70,16 +70,16 @@ Add to your OpenClaw configuration:
 
 ```bash
 # Run the self-improving agent
-python -m self_improver run
+python -m self_improving_agent run
 
 # Learn from last session
-python -m self_improver learn
+python -m self_improving_agent learn
 
 # Review all learnings
-python -m self_improver review
+python -m self_improving_agent review
 
 # Export learnings to file
-python -m self_improver export
+python -m self_improving_agent export
 ```
 
 ---
@@ -91,7 +91,7 @@ python -m self_improver export
 Executes the self-improving agent with all applied improvements.
 
 ```bash
-python -m self_improver run --workspace /path/to/workspace
+python -m self_improving_agent run --workspace /path/to/workspace
 ```
 
 ### `learn` - Learn from Session
@@ -99,7 +99,7 @@ python -m self_improver run --workspace /path/to/workspace
 Analyzes the last session and extracts learnings.
 
 ```bash
-python -m self_improver learn --verbose
+python -m self_improving_agent learn --verbose
 ```
 
 ### `review` - Review Learnings
@@ -107,7 +107,7 @@ python -m self_improver learn --verbose
 Reviews all stored learnings.
 
 ```bash
-python -m self_improver review --verbose
+python -m self_improving_agent review --verbose
 ```
 
 ### `export` - Export Learnings
@@ -115,7 +115,7 @@ python -m self_improver review --verbose
 Exports all learnings to a markdown file.
 
 ```bash
-python -m self_improver export
+python -m self_improving_agent export
 ```
 
 ---

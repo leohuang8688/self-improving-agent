@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Self-Improving Claw - Main CLI Entry Point
+Self-Improving Agent - Main CLI Entry Point
 
 A self-improving agent system for OpenClaw that learns from interactions
 and continuously improves its performance.
@@ -16,9 +16,9 @@ from src.memory import LearningMemory
 
 
 def main():
-    """Main entry point for the self-improving claw CLI."""
+    """Main entry point for the self-improving-agent CLI."""
     parser = argparse.ArgumentParser(
-        description='Self-Improving Claw - Continuous learning agent for OpenClaw'
+        description='Self-Improving Agent - Continuous learning agent for OpenClaw'
     )
     
     parser.add_argument(
@@ -63,7 +63,7 @@ def main():
 
 def run_agent(agent, hooks, memory, verbose=False):
     """Run the self-improving agent."""
-    print("🧤 Starting Self-Improving Claw...")
+    print("🧤 Starting Self-Improving Agent...")
     
     # Load learnings
     memory.load()

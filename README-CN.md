@@ -45,16 +45,16 @@ uv pip install -e .
 
 ```bash
 # 运行自改进智能体
-python -m self_improver run
+python -m self_improving_agent run
 
 # 从上次会话学习
-python -m self_improver learn
+python -m self_improving_agent learn
 
 # 查看所有学习成果
-python -m self_improver review
+python -m self_improving_agent review
 
 # 导出学习成果到文件
-python -m self_improver export
+python -m self_improving_agent export
 ```
 
 ---
@@ -66,7 +66,7 @@ python -m self_improver export
 执行带有所有已应用改进的自改进智能体。
 
 ```bash
-python -m self_improver run --workspace /path/to/workspace
+python -m self_improving_agent run --workspace /path/to/workspace
 ```
 
 ### `learn` - 从会话学习
@@ -74,7 +74,7 @@ python -m self_improver run --workspace /path/to/workspace
 分析上次会话并提取学习成果。
 
 ```bash
-python -m self_improver learn --verbose
+python -m self_improving_agent learn --verbose
 ```
 
 ### `review` - 回顾学习成果
@@ -82,7 +82,7 @@ python -m self_improver learn --verbose
 回顾所有存储的学习成果。
 
 ```bash
-python -m self_improver review --verbose
+python -m self_improving_agent review --verbose
 ```
 
 ### `export` - 导出学习成果
@@ -90,7 +90,7 @@ python -m self_improver review --verbose
 将所有学习成果导出到 markdown 文件。
 
 ```bash
-python -m self_improver export
+python -m self_improving_agent export
 ```
 
 ---
