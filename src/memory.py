@@ -15,6 +15,7 @@ class LearningMemory:
         self.workspace = Path(workspace)
         self.learnings_path = self.workspace / 'learnings'
         self.learnings_path.mkdir(parents=True, exist_ok=True)
+        self.learnings = []  # Initialize learnings list
         
     def load(self):
         """Load all learnings from disk."""
