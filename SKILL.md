@@ -1,134 +1,284 @@
 ---
 name: self-improving-agent
-description: Self-improving agent system for OpenClaw. Enables continuous learning from interactions and automatic performance improvements. Features memory system, hook system, and progress tracking.
+description: Self-improving agent system for OpenClaw. Enables continuous learning from interactions, errors, and recoveries. Automatically improves performance over time.
 ---
 
 # Self-Improving Agent
 
-## 🔒 Security
+A continuous learning agent system for OpenClaw that learns from:
+- ✅ **Interactions** - Learn from every conversation
+- ✅ **Errors** - Learn from mistakes to avoid them
+- ✅ **Recoveries** - Learn what works to recover successfully
 
-- ✅ No shell command execution
-- ✅ No external API calls without permission
-- ✅ All data stored locally
-- ✅ Open source and auditable
-- ✅ No sensitive data collection
+---
 
-## Overview
-
-Self-Improving Claw is an OpenClaw skill that enables continuous learning and automatic improvement. It learns from every interaction and applies improvements automatically.
-
-## Features
+## ✨ Features
 
 - 🧠 **Continuous Learning** - Learns from every interaction
+- ❌ **Error Learning** - Learns from mistakes to avoid repetition
+- ✅ **Recovery Learning** - Learns successful recovery patterns
 - 🔄 **Auto-Improvement** - Automatically applies improvements
 - 📚 **Memory System** - Stores and retrieves learnings
-- 🔌 **Hook System** - Extensible hook system
+- 🔌 **Hook System** - Extensible hook system for custom improvements
 - 📊 **Progress Tracking** - Track improvement over time
+- 🔧 **Python CLI** - Easy to use command-line interface
+- 🧩 **OpenClaw Skill** - Seamless integration with OpenClaw
 
-## Commands
+---
 
-### Learn from Session
+## 🚀 Quick Start
 
-```bash
-python -m self_improve_claw learn
-```
+### Prerequisites
 
-### Review Learnings
+- Python 3.10+
+- OpenClaw installed
+- pip or uv package manager
 
-```bash
-python -m self_improve_claw review
-```
+### Installation
 
-### Export Learnings
-
-```bash
-python -m self_improve_claw export
-```
-
-## Environment Variables
+#### As OpenClaw Skill
 
 ```bash
-# Optional: Workspace path
-WORKSPACE_PATH=~/.openclaw/workspace
-
-# Optional: Enable/disable learning
-LEARNING_ENABLED=true
-
-# Optional: Auto-apply improvements
-AUTO_APPLY=true
+# Clone to OpenClaw skills directory
+cd ~/.openclaw/workspace/skills
+git clone https://github.com/leohuang8688/self-improving-agent.git
 ```
 
-## Usage Examples
+**Auto-learning is enabled by default!** After each OpenClaw session, the agent will automatically learn and improve.
 
-### Run the Agent
+#### As Python Package
 
-```python
-from self_improve_claw import SelfImprovingAgent
+```bash
+# Clone the repository
+git clone https://github.com/leohuang8688/self-improving-agent.git
+cd self-improving-agent
 
-agent = SelfImprovingAgent()
-agent.run()
+# Install with pip
+pip install -e .
+
+# Or install with uv
+uv pip install -e .
 ```
 
-### Learn from Last Session
+### Basic Usage
 
-```python
-from self_improve_claw import LearningMemory
+#### Automatic Mode (Recommended)
 
-memory = LearningMemory()
-memory.load()
-learnings = memory.get_all()
+Just use OpenClaw normally! Learning happens automatically after each session, error, or recovery.
+
+```bash
+# Start OpenClaw
+openclaw
+
+# Use it normally...
+
+# Exit OpenClaw
+# → Auto-learning triggers automatically!
 ```
 
-## Architecture
+#### Manual Mode
+
+```bash
+# Run the self-improving agent
+python -m self_improving_agent run
+
+# Learn from last session
+python -m self_improving_agent learn
+
+# Learn from errors
+python -m self_improving_agent learn-errors
+
+# Learn from recoveries
+python -m self_improving_agent learn-recoveries
+
+# Review all learnings
+python -m self_improving_agent review
+
+# Export learnings to file
+python -m self_improving_agent export
+```
+
+---
+
+## 📖 Commands
+
+### `run` - Run the Agent
+
+Executes the self-improving agent with all applied improvements.
+
+```bash
+python -m self_improving_agent run --workspace /path/to/workspace
+```
+
+### `learn` - Learn from Session
+
+Analyzes the last session and extracts learnings.
+
+```bash
+python -m self_improving_agent learn --verbose
+```
+
+### `learn-errors` - Learn from Errors
+
+Analyzes error logs and extracts learnings.
+
+```bash
+python -m self_improving_agent learn-errors --verbose
+```
+
+### `learn-recoveries` - Learn from Recoveries
+
+Analyzes recovery logs and extracts successful patterns.
+
+```bash
+python -m self_improving_agent learn-recoveries --verbose
+```
+
+### `review` - Review Learnings
+
+Reviews all stored learnings.
+
+```bash
+python -m self_improving_agent review --verbose
+```
+
+### `export` - Export Learnings
+
+Exports all learnings to a markdown file.
+
+```bash
+python -m self_improving_agent export
+```
+
+---
+
+## 🪝 Hook System
+
+### Available Hooks
+
+#### `onSessionEnd(session)`
+- **Triggered**: When session ends
+- **Purpose**: Post-session learning, cleanup, save state
+- **Parameter**: `session` - Session object
+
+#### `onError(error)`
+- **Triggered**: When an error occurs
+- **Purpose**: Error logging, learning from mistakes
+- **Parameter**: `error` - Error object
+
+#### `onRecovery()`
+- **Triggered**: When recovering from error
+- **Purpose**: Learn successful recovery patterns
+- **Parameter**: None
+
+---
+
+## 📝 Learning Types
+
+### 1. **Session Learning**
+- **Triggered by**: `onSessionEnd`
+- **Learns from**: Conversation patterns, user preferences
+- **Stored in**: `learnings/sessions.json`
+
+### 2. **Error Learning**
+- **Triggered by**: `onError`
+- **Learns from**: Mistakes, errors, failures
+- **Stored in**: `learnings/errors.json`
+- **Purpose**: Avoid repeating mistakes
+
+### 3. **Recovery Learning**
+- **Triggered by**: `onRecovery`
+- **Learns from**: Successful recoveries
+- **Stored in**: `learnings/recoveries.json`
+- **Purpose**: Repeat successful recovery patterns
+
+---
+
+## 📁 Project Structure
 
 ```
-OpenClaw Agent
-     ↓
-Self-Improving Claw
-     ↓
-┌────┴────┐
-│Hooks    │
-│Memory   │
-└─────────┘
+self-improving-agent/
+├── src/
+│   ├── hooks.py              # Hook manager
+│   └── ...
+├── hooks/
+│   └── error_learning.py     # Error learning hook
+├── learnings/
+│   ├── sessions.json         # Session learnings
+│   ├── errors.json           # Error learnings
+│   └── recoveries.json       # Recovery learnings
+├── main.py
+├── README.md
+└── SKILL.md
 ```
 
-## Notes
+---
 
-1. **Learning**: Automatically extracts learnings from interactions
-2. **Memory**: Stores learnings in JSON format
-3. **Hooks**: Extensible system for custom improvements
-4. **Privacy**: All data stored locally, no external transmission
+## 🔧 Configuration
 
-## Troubleshooting
+In OpenClaw configuration file:
 
-### No Learnings Found
-- Ensure learning is enabled
-- Check if interactions have occurred
-- Verify workspace path is correct
+```json
+{
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "self-improve": {
+          "enabled": true
+        },
+        "error-learning": {
+          "enabled": true
+        }
+      }
+    }
+  }
+}
+```
 
-### Import Errors
-- Ensure package is installed: `pip install -e .`
-- Check Python version: requires Python 3.10+
+---
 
-## Resources
+## 📊 Learning Files
 
-- [GitHub Repository](https://github.com/leohuang8688/self-improve-claw)
-- [OpenClaw Documentation](https://docs.openclaw.ai/)
+### `learnings/errors.json`
+```json
+[
+  {
+    "timestamp": "2026-03-15T12:30:00",
+    "error_type": "ValueError",
+    "error_message": "Invalid parameter",
+    "context": {
+      "traceback": "..."
+    }
+  }
+]
+```
 
-## Changelog
+### `learnings/recoveries.json`
+```json
+[
+  {
+    "timestamp": "2026-03-15T12:35:00",
+    "recovery_method": "automatic_recovery"
+  }
+]
+```
 
-### v1.0.0 (2026-03-13)
-- ✅ Initial release
-- ✅ Continuous learning system
-- ✅ Memory system
-- ✅ Hook system
-- ✅ CLI interface
-- ✅ OpenClaw integration
+---
 
-## License
+## 🎯 Best Practices
+
+1. **Review learnings regularly** - Review and apply learnings weekly
+2. **Export learnings** - Export learnings for backup
+3. **Apply learnings** - Apply learnings to improve future performance
+4. **Clean old learnings** - Remove outdated learnings periodically
+
+---
+
+## 📝 License
 
 MIT License
 
-## Author
+## 👨‍💻 Author
 
 PocketAI for Leo - OpenClaw Community
