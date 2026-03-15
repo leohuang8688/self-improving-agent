@@ -79,6 +79,13 @@ class ErrorLearningHook:
             'timestamp': error_data['timestamp']
         }
     
+    def _save_learning(self, learning):
+        """Save a single learning to file."""
+        # This method was missing - now added
+        learnings = self._load_errors()
+        learnings.append(learning)
+        self._save_errors(learnings)
+    
     def _detect_recovery_method(self):
         """Detect what method was used to recover."""
         # This could be enhanced to analyze the recovery process

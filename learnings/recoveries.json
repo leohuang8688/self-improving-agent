@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2026-03-15T12:47:25.386240",
+    "recovery_method": "automatic_recovery"
+  },
+  {
+    "timestamp": "2026-03-15T12:47:25.391210",
+    "recovery_method": "automatic_recovery"
+  },
+  {
+    "timestamp": "2026-03-15T14:12:49.242638",
+    "recovery_method": "automatic_recovery"
+  },
+  {
+    "timestamp": "2026-03-15T14:12:49.246435",
+    "recovery_method": "automatic_recovery"
+  },
+  {
+    "timestamp": "2026-03-15T14:23:10.216593",
+    "recovery_method": "automatic_recovery"
+  },
+  {
+    "timestamp": "2026-03-15T14:23:10.222531",
+    "recovery_method": "automatic_recovery"
+  }
+]

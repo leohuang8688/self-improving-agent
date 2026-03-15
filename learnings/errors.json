@@ -1,0 +1,64 @@
+[
+  {
+    "timestamp": "2026-03-15T12:47:25.385703",
+    "error_type": "ValueError",
+    "error_message": "Test error: Invalid parameter value",
+    "context": {
+      "traceback": "Traceback (most recent call last):\n  File \"/root/.openclaw/workspace/skills/self-improving-agent/test_hooks.py\", line 29, in test_error_learning\n    raise ValueError(\"Test error: Invalid parameter value\")\nValueError: Test error: Invalid parameter value\n"
+    }
+  },
+  {
+    "timestamp": "2026-03-15T12:47:25.386625",
+    "error_type": "ValueError",
+    "error_message": "Test error: Database connection failed",
+    "context": {
+      "traceback": "Traceback (most recent call last):\n  File \"/root/.openclaw/workspace/skills/self-improving-agent/test_hooks.py\", line 69, in test_full_workflow\n    raise ValueError(\"Test error: Database connection failed\")\nValueError: Test error: Database connection failed\n"
+    }
+  },
+  {
+    "timestamp": "2026-03-15T14:12:49.242047",
+    "error_type": "ValueError",
+    "error_message": "Test error: Invalid parameter value",
+    "context": {
+      "traceback": "Traceback (most recent call last):\n  File \"/root/.openclaw/workspace/skills/self-improving-agent/test_hooks.py\", line 29, in test_error_learning\n    raise ValueError(\"Test error: Invalid parameter value\")\nValueError: Test error: Invalid parameter value\n"
+    }
+  },
+  {
+    "timestamp": "2026-03-15T14:12:49.243216",
+    "error_type": "ValueError",
+    "error_message": "Test error: Database connection failed",
+    "context": {
+      "traceback": "Traceback (most recent call last):\n  File \"/root/.openclaw/workspace/skills/self-improving-agent/test_hooks.py\", line 69, in test_full_workflow\n    raise ValueError(\"Test error: Database connection failed\")\nValueError: Test error: Database connection failed\n"
+    }
+  },
+  {
+    "timestamp": "2026-03-15T14:23:10.214222",
+    "error_type": "ValueError",
+    "error_message": "Test error: Invalid parameter value",
+    "context": {
+      "traceback": "Traceback (most recent call last):\n  File \"/root/.openclaw/workspace/skills/self-improving-agent/test_hooks.py\", line 29, in test_error_learning\n    raise ValueError(\"Test error: Invalid parameter value\")\nValueError: Test error: Invalid parameter value\n"
+    }
+  },
+  {
+    "type": "error_avoidance",
+    "error_type": "ValueError",
+    "error_message": "Test error: Invalid parameter value",
+    "prevention": "Avoid Test error: Invalid parameter value",
+    "timestamp": "2026-03-15T14:23:10.214222"
+  },
+  {
+    "timestamp": "2026-03-15T14:23:10.217243",
+    "error_type": "ValueError",
+    "error_message": "Test error: Database connection failed",
+    "context": {
+      "traceback": "Traceback (most recent call last):\n  File \"/root/.openclaw/workspace/skills/self-improving-agent/test_hooks.py\", line 69, in test_full_workflow\n    raise ValueError(\"Test error: Database connection failed\")\nValueError: Test error: Database connection failed\n"
+    }
+  },
+  {
+    "type": "error_avoidance",
+    "error_type": "ValueError",
+    "error_message": "Test error: Database connection failed",
+    "prevention": "Avoid Test error: Database connection failed",
+    "timestamp": "2026-03-15T14:23:10.217243"
+  }
+]
