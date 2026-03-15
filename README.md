@@ -1,4 +1,4 @@
-# 🧠 Self-Improving Agent
+# 🧠 Self-Improving-Agent
 
 **A continuous learning system for OpenClaw that learns from interactions, errors, recoveries, and performance metrics to automatically improve over time.**
 
